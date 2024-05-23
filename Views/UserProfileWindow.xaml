@@ -1,0 +1,52 @@
+﻿<Window x:Class="OnlineStore.UserProfileWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OnlineStore" 
+        d:DataContext="{d:DesignInstance Type=local:UserProfileViewModel}"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="UserProfileWindow" Height="450" Width="500">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Width" Value="200"/>
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="Margin" Value="0,10"/>
+            <Setter Property="Background" Value="Orange"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+    </Window.Resources>
+    <Grid Background="#242128">
+        <StackPanel Name="ProfilePanel" Grid.Row="1" HorizontalAlignment="Center">
+            <Ellipse Name="ProfileImage" Width="100" Height="100">
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="{Binding User.ImagePath}"/>
+                </Ellipse.Fill>
+            </Ellipse>
+            <TextBlock Text="Профиль пользователя" FontWeight="Bold" FontSize="20" Foreground="White"/>
+            <TextBlock Text="Имя пользователя:" Foreground="White"/>
+            <TextBlock Text="{Binding User.Username}" Foreground="White">
+                <TextBlock.TextDecorations>
+                    <TextDecoration Location="Underline"/>
+                </TextBlock.TextDecorations>
+            </TextBlock>
+            <TextBlock Text="Email:" Foreground="White"/>
+            <TextBlock Text="{Binding User.Email}" Foreground="White"/>
+            <TextBlock Text="Адрес:" Foreground="White"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBox Text="{Binding User.Address, UpdateSourceTrigger=PropertyChanged}" Width="200" Margin="5"/>
+                <Button Content="Сохранить" Command="{Binding UpdateAddressCommand}" Margin="10,0,0,0" Height="30" Width="150"/>
+            </StackPanel>
+            <TextBlock Text="Номер телефона:" Foreground="White"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBox Text="{Binding User.PhoneNumber, UpdateSourceTrigger=PropertyChanged}" Width="200" Margin="5"/>
+                <Button Content="Сохранить" Command="{Binding UpdatePhoneNumberCommand}" Margin="10,0,0,0" Height="30" Width="150"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Margin="0,10,0,0">
+                <Button Content="Обновить фото профиля" Margin="5" Height="30" Width="200" Click="Button_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+
+</Window>

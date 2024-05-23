@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="OnlineStore.OrderItem">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAEAAAAAAAAAAAAAAAAAAAAAAAQgAAAAAAIAgAAAAAA=</HashCode>
+      <FileName>dbmodels\OrderItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OnlineStore.Role">
+    <Position X="2.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACIAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>dbmodels\Role.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OnlineStore.FavouriteHorse">
+    <Position X="4.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAACgAAAAgAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>dbmodels\FavouriteHorse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OnlineStore.Horse">
+    <Position X="6.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAQEAAAAAAAAAAJAAAAAgAAAAAAiAAAABAAA=</HashCode>
+      <FileName>dbmodels\Horse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OnlineStore.HorseReview">
+    <Position X="14.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAgAAAAAAAQAAAAgAAAAgAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>dbmodels\HorseReview.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Object">
+    <Position X="11.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="OnlineStore.OnlineHorseStoreReview">
+    <Position X="10.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAQCAAAAEAAAAAAAAAABAAAgAAAAAAABIAAAAAAAA=</HashCode>
+      <FileName>dbmodels\OnlineHorseStoreReview.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OnlineStore.Order">
+    <Position X="2.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>GAABAAAAAAEAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>dbmodels\Order.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OnlineStore.ShoppingCart">
+    <Position X="9" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAEAAAAAgAAAAgAAAAAAIAgAAAAAA=</HashCode>
+      <FileName>dbmodels\ShoppingCart.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OnlineStore.User">
+    <Position X="12" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAQAIAACAAAAAAEQAAQJgAAAAAAAACAACAAAAAAAA=</HashCode>
+      <FileName>dbmodels\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OnlineStore.AddHorseViewModel">
+    <Position X="7" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAQAAAAABogAAAIAIgAAAAAAAAAhACAABAAA=</HashCode>
+      <FileName>ViewModels\AddHorseViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="OnlineStore.FavouriteHorseViewModel">
+    <Position X="0.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAiAAAAAIAAAAAAAgAAAAIABEBACAAIAAAA=</HashCode>
+      <FileName>ViewModels\FavouriteHorseViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="OnlineStore.LoginViewModel">
+    <Position X="8.25" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAIQAAAAAAgBAAAAACAAIQCACAAAA=</HashCode>
+      <FileName>ViewModels\LoginViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="OnlineStore.MainCatalogViewModel">
+    <Position X="5.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQABAAAEAgGABAAAoIASgAAgrhQAAIIAAL5CCAIJJAQ=</HashCode>
+      <FileName>ViewModels\MainCatalogViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="OnlineStore.OrdersViewModel">
+    <Position X="11" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEBAAAAACECAAAAIAAAQAAAgAAAAIACAAAAAEAEAAE=</HashCode>
+      <FileName>ViewModels\OrdersViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="OnlineStore.ProductProfileViewModel">
+    <Position X="14.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABABAAAIASAAAAAAIAAAgBAAwCAAAIBAAAIAAAQgICA=</HashCode>
+      <FileName>ViewModels\ProductProfileViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="OnlineStore.RegistrationViewModel">
+    <Position X="10" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAIQAAAAAAgAABAACCACIACQAAAAE=</HashCode>
+      <FileName>ViewModels\RegistrationViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="OnlineStore.RelayCommand">
+    <Position X="13" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEACAAQAAECAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\RelayCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="OnlineStore.ShoppingCartViewModel">
+    <Position X="3.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAgAAAAgAAIAAAAAGAggAAAIAAAAACwAIgAAA=</HashCode>
+      <FileName>ViewModels\ShoppingCartViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="OnlineStore.UserProfileViewModel">
+    <Position X="16.25" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAIAAAAAAAAIAAAQAAAgACAAICAAIAAEQAAAAA=</HashCode>
+      <FileName>ViewModels\UserProfileViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

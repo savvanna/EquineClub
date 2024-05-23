@@ -1,0 +1,126 @@
+﻿<Window x:Class="OnlineStore.MainCatalog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OnlineStore" 
+        d:DataContext="{d:DesignInstance Type=local:MainCatalogViewModel}"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="MainCatalog" Height="450" Width="700">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Width" Value="200"/>
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="Margin" Value="0,10"/>
+            <Setter Property="Background" Value="Orange"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="ListBoxItem">
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+    </Window.Resources>
+    <DockPanel Background="#242128">
+        <ListBox DockPanel.Dock="Left" Width="200" Margin="0,0,10,0" Background="#242128">
+            <ListBoxItem>
+                <ListBoxItem.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding OpenUserProfileCommand}" />
+                </ListBoxItem.InputBindings>
+                Профиль
+            </ListBoxItem>
+            <ListBoxItem>
+                <ListBoxItem.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding OpenShoppingCartCommand}" />
+                </ListBoxItem.InputBindings>
+                Брони
+            </ListBoxItem>
+            <ListBoxItem>
+                <ListBoxItem.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding OpenFavoriteHorseCommand}" />
+                </ListBoxItem.InputBindings>
+                Избранное
+            </ListBoxItem>
+            <ListBoxItem>
+                <ListBoxItem.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding OpenOrdersCommand}" />
+                </ListBoxItem.InputBindings>
+                Заказы
+            </ListBoxItem>
+            <Button Content="Добавить лошадь" Command="{Binding AddHorseCommand}" DockPanel.Dock="Top" Visibility="{Binding AddHorseVisibility}"/>
+            <Button Content="Выход" Click="Button_Click" DockPanel.Dock="Top"/>
+        </ListBox>
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <CheckBox Content="Моя подпись" IsChecked="True"/>
+            
+
+            
+            <Menu>
+                <MenuItem Header="Сортировать">
+                    <MenuItem Header="По возрастанию цены" Command="{Binding SortCommand}" CommandParameter="PriceAscending"/>
+                    <MenuItem Header="По убыванию цены" Command="{Binding SortCommand}" CommandParameter="PriceDescending"/>
+                </MenuItem>
+                <MenuItem Header="Фильтровать">
+                    <MenuItem Header="Бренд">
+                        <ItemsControl ItemsSource="{Binding Brands}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <MenuItem Header="{Binding}" Command="{Binding DataContext.FilterCommand, RelativeSource={RelativeSource AncestorType=Menu}}" CommandParameter="{Binding}"/>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </MenuItem>
+                    <MenuItem Header="Модель">
+                        <ItemsControl ItemsSource="{Binding Models}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <MenuItem Header="{Binding}" Command="{Binding DataContext.FilterCommand, RelativeSource={RelativeSource AncestorType=Menu}}" CommandParameter="{Binding}"/>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem Header="Сброс" Command="{Binding ResetCommand}"/>
+            </Menu>
+            <ScrollViewer Grid.Row="1">
+                <ItemsControl Name="ProductListView" ItemsSource="{Binding Products}" Grid.Row="1" Background="#242128">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel Orientation="Horizontal" />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border BorderBrush="DarkSlateBlue" BorderThickness="1" CornerRadius="10" Padding="10" Margin="10" Width="220">
+                                <StackPanel Orientation="Vertical">
+                                    <Image Source="{Binding ImagePath}" Height="100"/>
+                                    <TextBlock Text="{Binding Brand}" TextAlignment="Center" FontWeight="Bold" Foreground="White"/>
+                                    <TextBlock Text="{Binding Model}" TextAlignment="Center" Foreground="White"/>
+                                    <TextBlock Text="{Binding Price}" TextAlignment="Center" Foreground="White"/>
+                                    <Button Content="Удалить" Command="{Binding DataContext.RemoveHorseCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}" CommandParameter="{Binding}" Visibility="{Binding DataContext.RemoveHorseVisibility, RelativeSource={RelativeSource AncestorType=ItemsControl}}"/>
+                                    <Button Content="Подробнее" Command="{Binding DataContext.OpenProductProfileCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}" CommandParameter="{Binding}"/>
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
+        </Grid>
+    </DockPanel>
+
+
+</Window>

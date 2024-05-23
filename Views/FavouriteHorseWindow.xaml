@@ -1,0 +1,53 @@
+﻿<Window x:Class="OnlineStore.FavoriteHorseWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OnlineStore"
+        d:DataContext="{d:DesignInstance Type=local:FavouriteHorseViewModel}"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="FavoriteHorses" Height="450" Width="800">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Width" Value="200"/>
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="Margin" Value="0,10"/>
+            <Setter Property="Background" Value="Orange"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+    </Window.Resources>
+    <Grid Background="#242128">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="1" BorderBrush="DarkSlateBlue" BorderThickness="1" CornerRadius="10" Padding="10" Margin="10">
+            <ScrollViewer>
+                <ItemsControl Name="FavoritesListView" ItemsSource="{Binding FavoriteHorses}" Background="#242128">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel Orientation="Horizontal" />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border BorderBrush="DarkSlateBlue" BorderThickness="1" CornerRadius="10" Padding="10" Margin="10" Width="220">
+                                <StackPanel Orientation="Vertical">
+                                    <Image Source="{Binding Horse.ImagePath}" Height="100"/>
+                                    <TextBlock Text="{Binding Horse.Brand}" TextAlignment="Center" FontWeight="Bold" Foreground="White"/>
+                                    <TextBlock Text="{Binding Horse.Model}" TextAlignment="Center" Foreground="White"/>
+                                    <TextBlock Text="{Binding Horse.Price}" TextAlignment="Center" Foreground="White"/>
+                                    <Button Content="Удалить" Command="{Binding DataContext.RemoveFromFavoritesCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}" CommandParameter="{Binding}"/>
+                                    <Button Content="Подробнее" Command="{Binding DataContext.OpenProductProfileCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}" CommandParameter="{Binding}"/>
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
+        </Border>
+    </Grid>
+
+</Window>
